@@ -1,0 +1,14 @@
+<!-- <h1> {{ vm.pageTitle}} </h1> -->
+<div ng-controller="PlaySelectController as vm">
+
+<table class="table-b">
+    <tr ng-repeat="gig in vm.gigs">
+        <td>{{gig.date}}</td>
+        <td class="bluebar"><a ng-href="#!/play/{{gig.gigListId}}">{{gig.venue}}</a></td>
+        <td>{{gig.fee}}</td>
+        <!-- <td><button class="deleteButton2"><a ng-href="#!/gigs/delete/{{gig._id}}"><span class="glyphicon glyphicon-remove"></span></a></button></td> -->
+    </tr>
+</table>
+
+
+</div>

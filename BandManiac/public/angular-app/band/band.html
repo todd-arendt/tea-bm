@@ -1,0 +1,112 @@
+<div ng-controller="BandController as vm">
+        <!-- <table class="table-calendar-input">
+                <tr ng-repeat="bandMember in vm.bandMembers">
+                    <td>{{bandMember.username}}</td>
+                </tr>
+        </table> -->
+
+        <div class="table-calendar-input">
+        <table >
+                <table>
+                        <tr>
+                        <td>Event type: </td>
+                        <td>
+                                <select ng-model="vm.event.eventType">
+                                <option value="gig">gig</option>
+                                <option value="unavailable">unavailable</option>
+                                <option value="practice">practice</option>
+                                </select>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td>Event Date: </td>
+                        <!-- <td><input type="text" ng-model="vm.event.eventDate" /></td> -->
+                        <td>{{vm.event.eventDate}}</td>
+                        </tr>
+                        <tr>
+                        <td>Description 1: </td>
+                        <td><input type="text" ng-model="vm.event.eventDesc1" /><span ng-if="vm.event.eventType != 'gig'"><button class="okBlueButtonSmall" ng-click="vm.deleteEvent(vm.event._id)"><span class="glyphicon glyphicon-remove">DEL</span></button></span></td>
+                        </tr>
+                        <tr>
+                        <td>Description 2: </td>
+                        <td><input type="text" ng-model="vm.event.eventDesc2" /><span ng-if="vm.event.eventType != 'gig'"><button type="submit" class="okBlueButtonSmall" ng-click="vm.addEvent(vm)"><span class="glyphicon glyphicon-ok">OK</span></button></span></td>
+                        </tr>
+                </table>
+                                       
+                                        <!-- <button class="backButton" ng-click="vm.goBack()"><span class="glyphicon glyphicon-arrow-left">BACK</span></button> -->
+                                        <!-- <button type="submit" class="okBlueButton floatRight" ng-click="vm.addEvent(vm)"><span class="glyphicon glyphicon-ok">OK</span></button> -->
+        </table>
+        </div>
+        <div class="calendar-padding">
+                <table  class="table-calendar-header">
+                <tr>
+                        <td>Mon</td>
+                        <td>Tue</td>
+                        <td>Wed</td>
+                        <td>Thu</td>
+                        <td>Fri</td>
+                        <td>Sat</td>
+                        <td>Sun</td>
+                </tr>
+        </table>
+        <div class="calendar-padding2">
+        <table  class="table-calendar">
+                <tr ng-repeat="week in vm.weeks track by $index">
+                        <td>
+                                <table > 
+                                        <tr><td>-----------</td></tr>
+                                        <tr ng-class="{'unavailable':'redevent', 'practice':'yellowevent','gig':'greenevent'}[week.mondayEvent]" ><td ng-click="vm.showEvent(week.mondayCompareDate,week.mondayEvent,week.mondayDesc1,week.mondayDesc2,week.monday_Id)">{{week.mondayDate}}</td>
+                                        </tr>
+                                </table>
+                        </td>
+                        <td>
+                                <table>
+                                        <tr><td>-----------</td></tr>
+                                        <tr ng-class="{'unavailable':'redevent', 'practice':'yellowevent','gig':'greenevent'}[week.tuesdayEvent]" ><td ng-click="vm.showEvent(week.tuesdayCompareDate,week.tuesdayEvent,week.tuesdayDesc1,week.tuesdayDesc2,week.tuesday_Id)">{{week.tuesdayDate}}</td>
+                                        </tr>
+                                </table>
+                        </td>
+                        <td>
+                                <table>
+                                        <tr><td>-----------</td></tr>
+                                        <tr ng-class="{'unavailable':'redevent', 'practice':'yellowevent','gig':'greenevent'}[week.wednesdayEvent]" ><td ng-click="vm.showEvent(week.wednesdayCompareDate,week.wednesdayEvent,week.wednesdayDesc1,week.wednesdayDesc2,week.wednesday_Id)">{{week.wednesdayDate}}</td>
+                                        </tr>
+                                </table>
+                        </td>
+                        <td>
+                                <table>
+                                        <tr><td>-----------</td></tr>
+                                        <tr ng-class="{'unavailable':'redevent', 'practice':'yellowevent','gig':'greenevent'}[week.thursdayEvent]" ><td ng-click="vm.showEvent(week.thursdayCompareDate,week.thursdayEvent,week.thursdayDesc1,week.thursdayDesc2,week.thursday_Id)">{{week.thursdayDate}}</td>
+                                        </tr>
+                                </table>
+                        </td>
+                        <td>
+                                <table>
+                                        <tr><td>-----------</td></tr>
+                                        <tr ng-class="{'unavailable':'redevent', 'practice':'yellowevent','gig':'greenevent'}[week.fridayEvent]" ><td ng-click="vm.showEvent(week.fridayCompareDate,week.fridayEvent,week.fridayDesc1,week.fridayDesc2,week.friday_Id)">{{week.fridayDate}}</td>
+                                        </tr>
+                                </table>
+                        </td>
+                        <td>
+                                <table>
+                                        <tr><td>-----------</td></tr>
+                                        <tr ng-class="{'unavailable':'redevent', 'practice':'yellowevent','gig':'greenevent'}[week.saturdayEvent]" ><td ng-click="vm.showEvent(week.saturdayCompareDate,week.saturdayEvent,week.saturdayDesc1,week.saturdayDesc2,week.saturday_Id)">{{week.saturdayDate}}</td>
+                                        </tr>
+
+                                </table>
+                        </td>
+                        <td>
+                                <table>
+                                        <tr><td>-----------</td></tr>
+                                        <tr ng-class="{'unavailable':'redevent', 'practice':'yellowevent','gig':'greenevent'}[week.sundayEvent]" ><td ng-click="vm.showEvent(week.sundayCompareDate,week.sundayEvent,week.sundayDesc1,week.sundayDesc2,week.sunday_Id)">{{week.sundayDate}}</td>
+                                        </tr>
+                                </table>
+                        </td>
+                </tr>
+        </table>
+        </div>
+
+
+
+
+</div>

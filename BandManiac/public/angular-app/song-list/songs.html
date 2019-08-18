@@ -1,0 +1,13 @@
+<div ng-controller="SongsController as vm">
+
+
+<span><button class="actionButton halfSize" ng-click="vm.refreshInactiveList()">Voting Songs</a></button><button class="actionButton halfSize" ng-click="vm.refreshActiveList()">Active Songs</a></button></span>
+<button class="actionButton fullSize"><a ng-href="#!/songs/addNewSong/{{vm.bandid}}"><span class="glyphicon glyphicon-plus"></span> New Song </a></button>
+<table>
+    <tr ng-repeat="song in vm.songs">
+        <td ng-class="song.vote1===true && song.vote2===true && song.vote3===true && song.vote4===true && song.vote5===true ? 'greenbar' : 'redbar'"><a ng-href="#!/songs/edit/{{song._id}}">{{song.title}}</a></td>
+        <td class="smallText tdMargin">{{song.artist}}</td>
+        <td class="smallText tdMargin">{{song.ourTuning}}</td>
+        <td><button class="deleteButton2"><a ng-href="#!/songs/delete/{{song._id}}"><span class="glyphicon glyphicon-remove"></span></a></button></td>
+    </tr>
+</table>

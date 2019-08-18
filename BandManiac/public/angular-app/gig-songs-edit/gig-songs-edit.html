@@ -1,0 +1,52 @@
+<div ng-controller="GigSongsEditController as vm">
+    <div class="banner">[ACTIVE SONGS]</div>
+    <table class="table-a">
+        <thead>
+        </thead>  
+        <tbody>
+            <tr ng-repeat="song in vm.songs">
+                <td><button class="songButton" ng-class="vm.songToAddId === song._id ? 'currentSongButton' : 'notCurrentSongButton'" ng-click="vm.selectSong(song._id)">{{song.title}}</button></td>
+                <td>{{song.artist}}</td>
+                <td>{{song.ourTuning}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="banner">[GIG LIST] 	<span class="glyphicon glyphicon-arrow-right"></span><span>GigListId: {{vm.gigsong.gigListId}}</span></div>
+    <table class="table-d">
+        <tr>
+            <td><input class="setButton" ng-class="vm.setBeingEdited === 1 ? 'currentSetButton' : 'notCurrentSetButton'"  type="button" ng-click="vm.editSet(vm, 1)" value="Set 1" /></td>
+            <td><input class="setButton" ng-class="vm.setBeingEdited === 2 ? 'currentSetButton' : 'notCurrentSetButton'"  type="button" ng-click="vm.editSet(vm, 2)" value="Set 2" /></td>
+            <td><input class="setButton" ng-class="vm.setBeingEdited === 3 ? 'currentSetButton' : 'notCurrentSetButton'"  type="button" ng-click="vm.editSet(vm, 3)" value="Set 3" /></td>
+            <td><input class="setButton" ng-class="vm.setBeingEdited === 4 ? 'currentSetButton' : 'notCurrentSetButton'"  type="button" ng-click="vm.editSet(vm, 4)" value="Set 4" /></td>
+        </tr>
+    </table>
+    <form novalidate class="simple-form">
+        <div>
+            <table class="table-b">
+                <thead>
+                </thead>
+                <tbody>
+                <tr ng-if= "(!vm.displayGigsongArray) || (vm.displayGigsongArray.length < 1)">
+                        <td><button class="buttonText" ng-click="vm.addToEnd()">Add Song Here</button></td> 
+                </tr>
+                <tr  ng-repeat="displayGigsong in vm.displayGigsongArray | orderBy:'songIndex'">
+                    <td>{{displayGigsong.title}}</td> 
+                    <td>{{displayGigsong.artist}}</td>
+                    <td><button ng-class="{'currentSongButton' : vm.greenAddButtons === true}" class="buttonText" ng-click="vm.addBefore(displayGigsong._id)">BEFORE</button></td>
+                    <td><button ng-class="{'currentSongButton' : vm.greenAddButtons === true}" class="buttonText" ng-click="vm.addAfter(displayGigsong._id)">AFTER</button></td>
+                    <td><button class="deleteButton" ng-click="vm.deleteFromSongsArray(displayGigsong._id)"><span class="glyphicon glyphicon-remove"></span></button></td>
+                </tr>
+                </tbody>
+            </table>
+               
+        </div>
+      <button class="backButton" ng-click="vm.goBack()"><span class="glyphicon glyphicon-arrow-left">BACK</span></button>     
+      <button class="actionButton floatRight" ng-click="vm.save(vm)"><span class="glyphicon glyphicon-ok">OK</span></button>
+      <!-- <button class="editButtonRight" ng-click="vm.copyGigList(gigListId)">Copy</span></button> -->
+      <button ng-if= "(!vm.displayGigsongArray) || (vm.displayGigsongArray.length < 1)" class="editButtonRight" ng-click="vm.copyGigList(vm.selectedGig.gigListId)">Copy</span></button>
+      <select ng-if= "(!vm.displayGigsongArray) || (vm.displayGigsongArray.length < 1)" class="editButtonRight" ng-model="vm.selectedGig" ng-options="gig.gigListId for gig in vm.gigs"></select>  
+
+      <!-- <input type="text" class="floatRight" ng-model="gigListId" placeholder="Gig List Id to copy" size="10" maxlength="10"/> -->
+     
+    </form>
+    

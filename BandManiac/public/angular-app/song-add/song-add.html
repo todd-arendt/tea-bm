@@ -1,0 +1,101 @@
+<div ng-controller="SongAddController as vm">
+    <form novalidate class="simple-form">
+      <!-- <label>Band Id: <input type="text" ng-model="vm.song.bandId" placeholder={{vm.bandid}} /></label><br /> -->
+      <table>
+          <tr>
+            <td>Title: </td>
+            <td><input type="text" ng-model="vm.song.title" /></td>
+          </tr>
+          <tr>
+            <td>Artist: </td>
+            <td><input type="text" ng-model="vm.song.artist" /></td>
+          </tr>
+          <tr>
+            <td>Original Tuning: </td>
+            <td><input type="text" ng-model="vm.song.originalTuning" /></td>
+          </tr>
+          <tr>
+            <td>Our Tuning: </td>
+            <td><input type="text" ng-model="vm.song.ourTuning" /></td>
+          </tr>
+          <tr>
+            <td>BPM: </td>
+            <td><input type="text" ng-model="vm.song.bpm" /></td>
+          </tr>
+          <tr>
+            <td>Starter: </td>
+            <td><input type="text" ng-model="vm.song.starter" /></td>
+          </tr>
+          <tr>
+            <td>Lead Vocal: </td>
+            <td><input type="text" ng-model="vm.song.leadVocal" /></td>
+          </tr>
+          <tr>
+            <td>Backup Vocal: </td>
+            <td><input type="text" ng-model="vm.song.backupVocal" /></td>
+          </tr>
+          <tr>
+            <td>Lead Guitar: </td>
+            <td><input type="text" ng-model="vm.song.leadGuitar" /></td>
+          </tr>
+          <tr>
+            <td>Rhythm Guitar: </td>
+            <td><input type="text" ng-model="vm.song.rhythmGuitar" /></td>
+          </tr>
+          <tr>
+            <td>Note 1: </td>
+            <td><input type="text" ng-model="vm.song.note1" /></td>
+          </tr>
+          <tr>
+            <td>Active: </td>
+            <td><input type="text" ng-model="vm.song.active" /></td>
+          </tr>
+          <tr>
+            <td>Rank: </td>
+            <td><input type="text" ng-model="vm.song.rank" /></td>
+          </tr>
+          <tr>
+            <td>Vote 1: </td>
+            <td><input type="text" ng-model="vm.song.vote1" ng-disabled="vm.votenumber !== '1'"/></td>
+          </tr>
+          <tr>
+            <td>Vote 2: </td>
+            <td><input type="text" ng-model="vm.song.vote2" ng-disabled="vm.votenumber !== '2'"/></td>
+          </tr>
+          <tr>
+            <td>Vote 3: </td>
+            <td><input type="text" ng-model="vm.song.vote3" ng-disabled="vm.votenumber !== '3'"/></td>
+          </tr>
+          <tr>
+            <td>Vote 4: </td>
+            <td><input type="text" ng-model="vm.song.vote4" ng-disabled="vm.votenumber !== '4'"/></td>
+          </tr>
+          <tr>
+            <td>Vote 5: </td>
+            <td><input type="text" ng-model="vm.song.vote5" ng-disabled="vm.votenumber !== '5'"/></td>
+          </tr>
+          <tr>
+            <td>Vote Status: </td>
+            <td><input type="text" ng-model="vm.song.voteStatus" /></td>
+          </tr>
+          <tr>
+            <td>Custom 1 Name: </td>
+            <td><input type="text" ng-model="vm.song.custom1Name" /></td>
+          </tr>
+          <tr>
+            <td>Custom 1 Value: </td>
+            <td><input type="text" ng-model="vm.song.custom1Value" /></td>
+          </tr>
+          <tr>
+            <td>Custom 2 Name: </td>
+            <td><input type="text" ng-model="vm.song.custom2Name" /></td>
+          </tr>
+          <tr>
+            <td>Custom 2 Value: </td>
+            <td><input type="text" ng-model="vm.song.custom2Value" /></td>
+          </tr>
+        </table>
+      
+      <button class="backButton" ng-click="vm.goBack(vm)"><span class="glyphicon glyphicon-arrow-left">BACK</span></button>
+      <button type="submit" class="actionButton floatRight" ng-click="vm.addSong(vm)"><span class="glyphicon glyphicon-ok">OK</span></button>
+    </form>

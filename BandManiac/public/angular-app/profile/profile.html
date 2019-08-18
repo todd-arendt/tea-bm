@@ -1,0 +1,32 @@
+<div ng-controller="ProfileController as vm">
+    <h2>I am {{vm.username}} and my membership votes are: </h2>
+            <table class="table-profile">
+                    <tr>
+                            <td class="tdMargin4Bold">Band Member</td>
+                            <td class="tdMargin4Bold">Assigned Vote #</td>
+                            <td class="tdMargin4Bold">My Vote (member?)</td>
+                            <td class="tdMargin4Bold">Current Member Status</td>
+                    </tr>
+                    <tr ng-repeat="bandMember in vm.bandMembers">
+                        <td class="tdMargin4">{{bandMember.username}}</td>
+                        <td class="tdMargin4">{{bandMember.votenumber}}</td>
+                        <td  class="tdMargin4" ng-show="vm.votenumber === '1'"><input type="checkbox" ng-model="bandMember.bandstatusv1"
+                                ng-true-value="'true'" ng-false-value="'false'" ng-change="vm.updateVote(bandMember.votenumber, bandMember.username, bandMember.bandstatusv1)">
+                        </td>
+                        <td  class="tdMargin4" ng-show="vm.votenumber === '2'"><input type="checkbox" ng-model="bandMember.bandstatusv2"
+                                ng-true-value="'true'" ng-false-value="'false'" ng-change="vm.updateVote(bandMember.votenumber, bandMember.username, bandMember.bandstatusv2)">
+                        </td>
+                        <td  class="tdMargin4" ng-show="vm.votenumber === '3'"><input type="checkbox" ng-model="bandMember.bandstatusv3"
+                                ng-true-value="'true'" ng-false-value="'false'" ng-change="vm.updateVote(bandMember.votenumber, bandMember.username, bandMember.bandstatusv3)">
+                        </td>
+                        <td  class="tdMargin4" ng-show="vm.votenumber === '4'"><input type="checkbox" ng-model="bandMember.bandstatusv4"
+                                ng-true-value="'true'" ng-false-value="'false'" ng-change="vm.updateVote(bandMember.votenumber, bandMember.username, bandMember.bandstatusv4)">
+                        </td>
+                        <td  class="tdMargin4" ng-show="vm.votenumber === '5'"><input type="checkbox" ng-model="bandMember.bandstatusv5"
+                                ng-true-value="'true'" ng-false-value="'false'" ng-change="vm.updateVote(bandMember.votenumber, bandMember.username, bandMember.bandstatusv5)">
+                        </td>
+                        <td class="tdMargin4">{{bandMember.bandstatus}}</td>
+                    </tr>
+            </table>
+    
+    </div>

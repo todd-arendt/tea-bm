@@ -1,0 +1,16 @@
+<h1>{{vm.song.title}} by {{vm.song.artist}}</h1>
+<h3>Starter: {{vm.song.starter}}  BPM: {{vm.song.bpm}}</h3>
+<h3>Vocals: </h3>
+<ul>
+    <li>{{vm.song.leadVocal}}</li>
+    <li>{{vm.song.backupVocal}}</li>  
+</ul>
+<h3>Guitars: ( {{vm.song.ourTuning}} )</h3>
+<ul>
+    <li>{{vm.song.leadGuitar}}</li>
+    <li>{{vm.song.rhythmGuitar}}</li>
+</ul>
+<input type="button" ng-click="vm.goBack()" value="Go Back" />
+<div ng-if="vm.isLoggedIn()">
+    You are logged in, and eventually will be able to do something !
+</div>

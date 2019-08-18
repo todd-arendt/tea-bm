@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="bandmaniac">
+     <!-- start server by c:\users\todd\Desktop\BandManiac> nodemon -->
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>BandMANIAC</title>
+        <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+        <link href="css/custom.css" rel="stylesheet" />
+    </head>
+    <body>
+        <bm-navigation></bm-navigation>
+        <div class="container-fluid">
+            <div ng-view></div>
+        </div>
+
+        <script src="jquery/jquery-2.2.4.min.js"></script>
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="node_modules/angular-route/angular-route.js"></script>
+        <script src="node_modules/angular-jwt/dist/angular-jwt.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+        <script src="angular-app/app.js"></script>
+        <script src="angular-app/song-list/song-list-controller.js"></script>
+        <script src="angular-app/song-display/song-display-controller.js"></script>
+        <script src="angular-app/song-data-factory/song-data-factory.js"></script>
+        <script src="angular-app/gig-data-factory/gig-data-factory.js"></script> 
+        <script src="angular-app/gig-add/gig-add-controller.js"></script>
+        <script src="angular-app/gig-edit/gig-edit-controller.js"></script>
+        <script src="angular-app/gigs/gigs-controller.js"></script>
+        <script src="angular-app/gig-delete/gig-delete-controller.js"></script>
+        <script src="angular-app/user-data-factory/user-data-factory.js"></script>
+        <script src="angular-app/event-data-factory/event-data-factory.js"></script> 
+        <script src="angular-app/event-add/event-add-controller.js"></script> 
+        <script src="angular-app/band/band-controller.js"></script>
+        <script src="angular-app/play/play-controller.js"></script>
+        <script src="angular-app/profile/profile-controller.js"></script>
+        <script src="angular-app/play-select/play-select-controller.js"></script>
+
+        <script src="angular-app/gig-songs-data-factory/gig-songs-data-factory.js"></script>
+        <script src="angular-app/gig-songs-edit/gig-songs-edit-controller.js"></script>
+        <script src="angular-app/register/register-controller.js"></script>
+        <script src="angular-app/navigation-directive/navigation-directive.js"></script>
+        <script src="angular-app/login/login-controller.js"></script>
+        <script src="angular-app/auth/auth-factory.js"></script>
+        <script src="angular-app/auth/auth-interceptor.js"></script>
+        <script src="angular-app/song-add/song-add-controller.js"></script>
+        <script src="angular-app/song-delete/song-delete-controller.js"></script>
+        <script src="angular-app/song-edit/song-edit-controller.js"></script> 
+
+    </body>
+</html>

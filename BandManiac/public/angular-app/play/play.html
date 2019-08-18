@@ -1,0 +1,61 @@
+<div ng-controller="PlayController as vm">
+        <div class="banner"> {{vm.gig.date}} @ {{vm.gig.venue}} <span class="floatRight">GigListId: {{vm.gigsong.gigListId}}</span></div>
+        <table class="table-c">
+            <tr>
+                <td><input class="setButton" ng-class="vm.setBeingViewed === 1 ? 'currentSetButton' : 'notCurrentSetButton'"  type="button" ng-click="vm.editSet(vm, 1)" value="Set 1" /></td>
+                <td><input class="setButton" ng-class="vm.setBeingViewed === 2 ? 'currentSetButton' : 'notCurrentSetButton'"  type="button" ng-click="vm.editSet(vm, 2)" value="Set 2" /></td>
+                <td><input class="setButton" ng-class="vm.setBeingViewed === 3 ? 'currentSetButton' : 'notCurrentSetButton'"  type="button" ng-click="vm.editSet(vm, 3)" value="Set 3" /></td>
+                <td><input class="setButton" ng-class="vm.setBeingViewed === 4 ? 'currentSetButton' : 'notCurrentSetButton'"  type="button" ng-click="vm.editSet(vm, 4)" value="Set 4" /></td>
+            </tr>
+        </table>
+        <h1 class="bluebar">{{vm.currentSong.title}}</h1>
+    <table class="table-c">
+        <thead>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Tuning:</td>  
+            <td>{{vm.currentSong.ourTuning}}</td>  
+        </tr>
+        <tr>
+            <td>BPM:</td>  
+            <td>{{vm.currentSong.bpm}}</td>  
+        </tr>
+        <tr>
+            <td>Starter:</td>  
+            <td>{{vm.currentSong.starter}}</td>  
+        </tr>
+        <tr>
+            <td>Lead Vocal:</td>  
+            <td>{{vm.currentSong.leadVocal}}</td>  
+        </tr>
+        <tr>
+            <td>Backup Vocal:</td>  
+            <td>{{vm.currentSong.backupVocal}}</td>  
+        </tr>
+        <tr>
+            <td>Lead Guitar:</td>  
+            <td>{{vm.currentSong.leadGuitar}}</td>  
+        </tr>
+        <tr>
+            <td>Rhythm Guitar:</td>  
+            <td>{{vm.currentSong.rhythmGuitar}}</td>  
+        </tr>
+        <tr ng-if="vm.currentSong.custom1Name && vm.currentSong.custom1Value">
+            <td>{{vm.currentSong.custom1Name}}:</td>  
+            <td>{{vm.currentSong.custom1Value}}</td>  
+        </tr>
+        <tr ng-if="vm.currentSong.custom2Name && vm.currentSong.custom2Value">
+            <td>{{vm.currentSong.custom2Name}}:</td>  
+            <td>{{vm.currentSong.custom2Value}}</td>  
+        </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h4>NOTES: {{vm.currentSong.note1}}</h4>
+    <hr>
+    <button class="playButtonBack" ng-click="vm.goBack()"><span class="glyphicon glyphicon-arrow-left">BACK</span></button>
+    <button class="playButtonRight" ng-click="vm.nextSong()">NEXT</button>
+    <button class="playButtonRight" ng-click="vm.previousSong()">PREV</button>
+   
+</div>

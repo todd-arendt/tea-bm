@@ -1,0 +1,45 @@
+<!-- <h1> {{ vm.pageTitle}} </h1> -->
+<div ng-controller="GigAddController as vm">
+    <form novalidate class="simple-form">
+      <table>
+        <!-- <tr>
+          <td>Band Id: </td>
+          <td><input type="text" ng-model="vm.gig.bandId" /></td>
+        </tr> -->
+        <tr>
+          <td>Venue: </td>
+          <td><input type="text" ng-model="vm.gig.venue" /></td>
+        </tr>
+        <tr>
+          <td>Date: </td>
+          <td><input type="text" ng-model="vm.gig.date" /></td>
+        </tr>
+        <tr>
+          <td>Start Time: </td>
+          <td><input type="text" ng-model="vm.gig.startTime" /></td>
+        </tr>
+        <!-- <tr>
+          <td>Gig List ID: </td>
+          <td><input type="text" ng-model="vm.gig.gigListId" /></td>
+        </tr> -->
+        <tr>
+          <td>Fee: </td>
+          <td><input type="text" ng-model="vm.gig.fee" /></td>
+        </tr>
+        <tr>
+          <td>Note: </td>
+          <td><input type="text" ng-model="vm.gig.note" /></td>
+        </tr>
+      </table>
+      <p class="boldText">SCHEDULE TIME : SCHEDULE ACTIVITY</p>
+      <input type="text" class="yellowbar" size="9" ng-model="vm.gig.schedule1" /> : <input type="text" class="yellowbar" ng-model="vm.gig.scheduleNote1" /></label><br />
+      <input type="text" class="yellowbar" size="9" ng-model="vm.gig.schedule2" /> : <input type="text" class="yellowbar" ng-model="vm.gig.scheduleNote2" /></label><br />
+      <input type="text" class="yellowbar" size="9" ng-model="vm.gig.schedule3" /> : <input type="text" class="yellowbar" ng-model="vm.gig.scheduleNote3" /></label><br />
+      <input type="text" class="yellowbar" size="9" ng-model="vm.gig.schedule4" /> : <input type="text" class="yellowbar" ng-model="vm.gig.scheduleNote4" /></label><br />
+      <input type="text" class="yellowbar" size="9" ng-model="vm.gig.schedule5" /> : <input type="text" class="yellowbar" ng-model="vm.gig.scheduleNote5" /></label><br />
+      <input type="text" class="yellowbar" size="9" ng-model="vm.gig.schedule6" /> : <input type="text" class="yellowbar" ng-model="vm.gig.scheduleNote6" /></label><br />
+      <input type="text" class="yellowbar" size="9" ng-model="vm.gig.schedule7" /> : <input type="text" class="yellowbar" ng-model="vm.gig.scheduleNote7" /></label><br />
+
+      <button class="backButton" ng-click="vm.goBack()"><span class="glyphicon glyphicon-arrow-left">BACK</span></button>
+      <button type="submit" class="actionButton floatRight" ng-click="vm.addGig(vm)"><span class="glyphicon glyphicon-ok">OK</span></button>
+    </form>

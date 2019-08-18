@@ -1,0 +1,16 @@
+<!-- <h1> {{ vm.pageTitle}} </h1> -->
+<div ng-controller="GigsController as vm">
+
+<button class="actionButton fullSize"><a ng-href="#!/gigs/addNewGig"><span class="glyphicon glyphicon-plus"></span> New Gig</a></button> 
+
+<table class="b">
+    <tr ng-repeat="gig in vm.gigs">
+        <td>{{gig.date}}</td>
+        <td class="bluebar"><a ng-href="#!/gigs/edit/{{gig._id}}">{{gig.venue}}</a></td>
+        <td>{{gig.fee}}</td>
+        <td><button class="deleteButton2"><a ng-href="#!/gigs/delete/{{gig._id}}"><span class="glyphicon glyphicon-remove"></span></a></button></td>
+    </tr>
+</table>
+
+
+</div>

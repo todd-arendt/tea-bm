@@ -1,0 +1,29 @@
+<!-- <h1> {{ vm.pageTitle}} </h1> -->
+<div ng-controller="EventAddController as vm">
+    <form novalidate class="simple-form">
+      <table>
+        <!-- <tr>
+          <td>Band Id: </td>
+          <td><input type="text" ng-model="vm.event.bandId" /></td>
+        </tr> -->
+        <tr>
+          <td>Event type: </td>
+          <td><input type="text" ng-model="vm.event.eventType" /></td>
+        </tr>
+        <tr>
+          <td>Event Date: </td>
+          <td><input type="text" ng-model="vm.event.eventDate" /></td>
+        </tr>
+        <tr>
+          <td>Description 1: </td>
+          <td><input type="text" ng-model="vm.event.eventDesc1" /></td>
+        </tr>
+        <tr>
+          <td>Description 2: </td>
+          <td><input type="text" ng-model="vm.event.eventDesc2" /></td>
+        </tr>
+      </table>
+     
+      <button class="backButton" ng-click="vm.goBack()"><span class="glyphicon glyphicon-arrow-left">BACK</span></button>
+      <button type="submit" class="actionButton floatRight" ng-click="vm.addEvent(vm)"><span class="glyphicon glyphicon-ok">OK</span></button>
+    </form>
